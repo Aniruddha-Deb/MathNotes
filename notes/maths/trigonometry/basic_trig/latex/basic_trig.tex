@@ -1,0 +1,100 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{lipsum}
+\usepackage{mathtools}
+\usepackage{titling}
+\usepackage[a4paper,margin=0.3in,footskip=0.25in]{geometry}
+
+%opening
+\pretitle{\vspace{-2cm}}
+\title{}
+\posttitle{}
+\preauthor{}
+\author{}
+\postauthor{}
+\predate{}
+\date{}
+\postdate{}
+
+\setlength{\jot}{8pt}
+\pagenumbering{gobble}
+
+\newcommand{\ppmm}{\begin{array}{c|c}+&+\\\hline\\[-12pt]-&-\end{array}}
+\newcommand{\pmpm}{\begin{array}{c|c}-&+\\\hline\\[-12pt]+&-\end{array}}
+\newcommand{\pmmp}{\begin{array}{c|c}-&+\\\hline\\[-12pt]-&+\end{array}}
+\DeclareMathOperator{\cosec}{cosec}
+
+\newcommand{\pwidth}{0.46\linewidth}
+
+\begin{document}
+	
+	\maketitle
+	
+	\section{General Trigonometric Formulae}
+	
+	\begin{minipage}[t]{\pwidth}
+		\subsection{Addition Formulae}
+		\begin{align}
+			\sin(A \pm B) &= \sin A \cos B \pm \cos A \sin B \\
+			\cos(A \pm B) &= \cos A \cos B \mp \sin A \sin B \\
+			\tan(A \pm B) &= \frac{\tan A \pm \tan B}{1 \mp \tan A \tan B} \\
+			\cot(A \pm B) &= \frac{\cot B \cot A \mp 1}{\cot B \pm \cot A}
+		\end{align}
+		
+		\subsection{Double Angle Formulae}
+		\begin{align}
+			\sin 2A &= 2 \sin A \cos A = \frac{2 \tan A}{1 + \tan^2A} \\
+			\cos 2A &= \cos^2A - \sin^2A \nonumber \\ &= 2\cos^2A - 1 \nonumber\\ &= 1 - 2\sin^2A \nonumber\\ &= \frac{1-\tan^2A}{1 + \tan^2A} \\
+			\tan 2A &= \frac{2\tan A}{1- \tan^2A}
+		\end{align}
+		
+		\subsection{Half Angle Formulae}
+		\begin{align}
+			\sin \frac A2 &= \pm \sqrt{\frac{1-\cos A}{2}} \qquad \ppmm \\
+			\cos \frac A2 &= \pm \sqrt{\frac{1+\cos A}{2}} \qquad \pmmp \\
+			\tan \frac A2 &= \pm \sqrt{\frac{1-\cos A}{1+\cos A}} \qquad \pmpm \nonumber\\	&= \frac{\sin A}{1+\cos A} \nonumber\\ &= \frac{1-\cos A}{\sin A} \nonumber\\ &= \cosec A - \cot A
+		\end{align}
+	\end{minipage}%
+	\hfill
+	\begin{minipage}[t]{\pwidth}
+		\subsection{Multiple Angle Formulae}
+		\begin{align}
+			\sin 3A &= 3\sin A - 4\sin^3A \\
+			\cos 3A &= 4\cos^3A - 3\cos A \\
+			\tan 3A &= \frac{3\tan A - \tan^3A}{1 - 3\tan^2A}
+		\end{align}
+		\\
+		\begin{align}
+			\tan\left(\displaystyle \sum_{i=1}^n a_i\right) = \frac{e_1 - e_3 + e_5 + ...}{1 - e_2 + e_4 + ...}
+		\end{align}
+		where \vspace{-10pt}
+		\begin{align}
+			e_1 &= \displaystyle \sum_{i=1}^n a_i \nonumber\\
+			e_2 &= \displaystyle \sum_{i < j} a_i a_j \nonumber\\
+			e_3 &= \displaystyle \sum_{i < j < k} a_i a_j a+k \nonumber
+		\end{align}
+		and so on.
+		
+		\subsection{Sum to Product Formulae}
+		\begin{align}
+			\sin C + \sin D &= 2\sin\left(\frac{C+D}2\right)\cos\left(\frac{C-D}2\right) \\
+			\sin C - \sin D &= 2\sin\left(\frac{C-D}2\right)\cos\left(\frac{C+D}2\right) \\
+			\cos C + \cos D &= 2\cos\left(\frac{C+D}2\right)\cos\left(\frac{C-D}2\right) \\
+			\cos C - \cos D &= -2\sin\left(\frac{C+D}2\right)\sin\left(\frac{C-D}2\right)
+		\end{align}
+	\end{minipage}
+	
+	\pagebreak
+	
+	\begin{minipage}[t]{\pwidth}
+		\subsection{Product to Sum Formulae}
+		\begin{align}
+			\sin C \sin D = \frac 12 (\cos(A+B) + \cos(A-B))
+		\end{align}
+	\end{minipage}%
+	\hfill
+	\begin{minipage}[t]{\pwidth}
+		
+	\end{minipage}
+		
+\end{document}
