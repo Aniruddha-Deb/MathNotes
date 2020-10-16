@@ -1,8 +1,8 @@
-Maths
+Physics
 ======================================
 
 .. toctree:: 
    :hidden:
-   :caption: Maths
-   
-   Trigonometry <trigonometry/index>
+   :caption: Physics
+
+   mechanics/index
