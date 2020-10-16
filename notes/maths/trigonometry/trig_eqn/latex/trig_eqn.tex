@@ -1,0 +1,50 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{lipsum}
+\usepackage{mathtools}
+\usepackage{titling}
+\usepackage[paperwidth=10cm,paperheight=17cm,margin=0.3in,footskip=0.25in]{geometry}
+
+%opening
+\pretitle{\vspace{-2cm}}
+\title{}
+\posttitle{}
+\preauthor{}
+\author{}
+\postauthor{}
+\predate{}
+\date{}
+\postdate{}
+
+\setlength{\jot}{8pt}
+\pagenumbering{gobble}
+
+\DeclareMathOperator{\cosec}{cosec}
+
+\newcommand{\pwidth}{0.46\linewidth}
+
+\begin{document}	
+	\maketitle
+
+	\begin{align}
+		\sin \theta &= \sin \alpha \nonumber \\
+		\implies \theta &= n\pi + (-1)^n\alpha,\ n \in \mathbb{Z} \\
+		\nonumber \\
+		\cos \theta &= \cos \alpha \nonumber \\
+		\implies \theta &= 2n\pi \pm \alpha,\ n \in \mathbb{Z} \\
+		\nonumber \\
+		\tan\theta &= \tan \alpha \nonumber \\
+		\implies \theta &= n\pi + \alpha,\ n \in \mathbb{Z} \\
+		\nonumber \\
+		\sin^2\theta &= \sin^2\alpha \nonumber \\
+		\implies \theta &= n\pi \pm \alpha,\ n \in \mathbb{Z} \\
+		\nonumber \\
+		\tan^2\theta &= \tan^2\alpha \nonumber \\
+		\implies \theta &= n\pi \pm \alpha,\ n \in \mathbb{Z} \\
+		\nonumber \\
+		a\cos\theta &+ b\sin\theta = c \nonumber \\
+		\implies \theta &= 2n\pi + \phi \pm \beta \\
+		\tan\phi &= \frac{b}{a},\ \cos\beta = \frac{c}{\sqrt{a^2+b^2}} \nonumber
+	\end{align}
+\end{document}

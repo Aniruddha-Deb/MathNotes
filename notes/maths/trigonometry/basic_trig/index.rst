@@ -1,4 +1,4 @@
 Basic Trignometry
 ==========================================
 
-.. image:: img1.svg
+.. image:: latex/basic_trig.svg

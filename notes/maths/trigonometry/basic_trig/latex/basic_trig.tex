@@ -3,7 +3,7 @@
 \usepackage{lipsum}
 \usepackage{mathtools}
 \usepackage{titling}
-\usepackage[a4paper,margin=0.3in,footskip=0.25in]{geometry}
+\usepackage[paperwidth=25cm,paperheight=50cm,margin=0.3in,footskip=0.25in]{geometry}
 
 %opening
 \pretitle{\vspace{-2cm}}
@@ -54,6 +54,13 @@
 			\cos \frac A2 &= \pm \sqrt{\frac{1+\cos A}{2}} \qquad \pmmp \\
 			\tan \frac A2 &= \pm \sqrt{\frac{1-\cos A}{1+\cos A}} \qquad \pmpm \nonumber\\	&= \frac{\sin A}{1+\cos A} \nonumber\\ &= \frac{1-\cos A}{\sin A} \nonumber\\ &= \cosec A - \cot A
 		\end{align}
+
+		\subsection{Product to Sum Formulae}
+		\begin{align}
+			2\sin A \sin B &= \cos(A-B) - \cos(A+B) \\
+			2\cos A \cos B &= \cos(A-B) + \cos(A+B) \\
+			2\sin A \cos B &= \sin(A-B) + \sin(A+B)
+		\end{align}
 	\end{minipage}%
 	\hfill
 	\begin{minipage}[t]{\pwidth}
@@ -63,7 +70,6 @@
 			\cos 3A &= 4\cos^3A - 3\cos A \\
 			\tan 3A &= \frac{3\tan A - \tan^3A}{1 - 3\tan^2A}
 		\end{align}
-		\\
 		\begin{align}
 			\tan\left(\displaystyle \sum_{i=1}^n a_i\right) = \frac{e_1 - e_3 + e_5 + ...}{1 - e_2 + e_4 + ...}
 		\end{align}
@@ -74,7 +80,7 @@
 			e_3 &= \displaystyle \sum_{i < j < k} a_i a_j a+k \nonumber
 		\end{align}
 		and so on.
-		
+
 		\subsection{Sum to Product Formulae}
 		\begin{align}
 			\sin C + \sin D &= 2\sin\left(\frac{C+D}2\right)\cos\left(\frac{C-D}2\right) \\
@@ -82,19 +88,38 @@
 			\cos C + \cos D &= 2\cos\left(\frac{C+D}2\right)\cos\left(\frac{C-D}2\right) \\
 			\cos C - \cos D &= -2\sin\left(\frac{C+D}2\right)\sin\left(\frac{C-D}2\right)
 		\end{align}
-	\end{minipage}
-	
-	\pagebreak
-	
-	\begin{minipage}[t]{\pwidth}
-		\subsection{Product to Sum Formulae}
+
+		\subsection{Difference of Squares}
 		\begin{align}
-			\sin C \sin D = \frac 12 (\cos(A+B) + \cos(A-B))
+			\sin^2A - \sin^2B &= \sin(A-B)\sin(A+B) \\
+			\cos^2A - \sin^2B &= \cos(A-B)\cos(A+B)
 		\end{align}
-	\end{minipage}%
-	\hfill
-	\begin{minipage}[t]{\pwidth}
-		
+
+		\subsection{Special Results}
+		\begin{align}
+			\sin(A)\sin\left(\frac{\pi}{3} - A\right)\sin\left(\frac{\pi}{3} + A\right) = \frac 14 \sin 3A \\
+			\cos(A)\cos\left(\frac{\pi}{3} - A\right)\cos\left(\frac{\pi}{3} + A\right) = \frac 14 \cos 3A \\
+			\tan(A)\tan\left(\frac{\pi}{3} - A\right)\tan\left(\frac{\pi}{3} + A\right) = \tan 3A
+		\end{align}
 	\end{minipage}
-		
+
+	\section{Sum and Product of Trigonometric Functions}
+	\subsection{Product formulae}
+	\begin{align}
+		C &= \cos \theta \cos 2\theta \cos 4\theta \cdots \cos 2^{n-1}\theta \nonumber \\
+		  &= \frac{\sin\theta}{\sin\theta}\cos \theta \cos 2\theta \cos 4\theta \cdots \cos 2^{n-1}\theta \nonumber \\
+		  &= \frac{\sin 2\theta}{2 \sin\theta}\cos 2\theta \cos 4\theta \cdots \cos 2^{n-1}\theta \nonumber \\
+		C &= \frac{\sin 2^n\theta}{2^n \sin\theta} \\
+		\nonumber \\
+		S &= \cos\frac{\theta}{2} \cos\frac{\theta}{4} \cos\frac{\theta}{8} \cdots \cos\frac{\theta}{2^n} \nonumber \\
+		  &= \frac{1}{\sin\frac{\theta}{2^n}} \cos\frac{\theta}{2} \cos\frac{\theta}{4} \cos\frac{\theta}{8} \cdots \cos\frac{\theta}{2^n} \sin\frac{\theta}{2^n} \nonumber \\
+		S &= \frac{1}{2^n\sin\frac{\theta}{2^n}} \sin\theta \\
+		S &\to \frac{\sin\theta}{\theta} \text{ as } n \to \infty
+	\end{align}
+
+	\subsection{Sum formulae}
+	\begin{align}
+		\sum_{r=1}^{n} \sin(\alpha + (r-1)\beta) = \frac{\sin\frac{n\beta}{2}}{\sin\frac{\beta}{2}} \sin\left( \alpha + (n-1)\frac\beta 2\right) \\
+		\sum_{r=1}^{n} \cos(\alpha + (r-1)\beta) = \frac{\sin\frac{n\beta}{2}}{\sin\frac{\beta}{2}} \cos\left( \alpha + (n-1)\frac\beta 2\right)		
+	\end{align}
 \end{document}
