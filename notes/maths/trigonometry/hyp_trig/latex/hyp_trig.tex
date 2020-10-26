@@ -1,0 +1,106 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{lipsum}
+\usepackage{mathtools}
+\usepackage{derivative}
+\usepackage{titling}
+\usepackage[paperwidth=25cm,paperheight=50cm,margin=0.3in,footskip=0.25in]{geometry}
+
+%opening
+\pretitle{\vspace{-2cm}}
+\title{}
+\posttitle{}
+\preauthor{}
+\author{}
+\postauthor{}
+\predate{}
+\date{}
+\postdate{}
+
+\setlength{\jot}{8pt}
+\pagenumbering{gobble}
+
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\cosech}{cosech}
+\DeclareMathOperator{\sech}{sech}
+
+\DeclareMathOperator{\arsinh}{arsinh}
+\DeclareMathOperator{\arcosh}{arcosh}
+\DeclareMathOperator{\artanh}{artanh}
+\DeclareMathOperator{\arcosech}{arcosech}
+\DeclareMathOperator{\arsech}{arsech}
+\DeclareMathOperator{\arcoth}{arcoth}
+
+\newcommand{\pwidth}{0.46\linewidth}
+
+\begin{document}	
+	\maketitle
+
+	\section{General Hyperbolic Trigonometric Formulae}
+
+	\begin{minipage}[t]{\pwidth}
+		\subsection{Hyperbolic Function definitions}
+		\begin{align}
+			\sinh x &= \frac{e^x - e^{-x}}{2} \\
+			\cosh x &= \frac{e^x + e^{-x}}{2} \\
+			\tanh x &= \frac{\cosh x}{\sinh x} = \frac{e^x - e^{-x}}{e^x + e^{-x}} \\
+			\cosech x &= \frac{1}{\sinh x} = \frac{2}{e^x - e^{-x}} \\
+			\sech x &= \frac{1}{\cosh x} = \frac{2}{e^x + e^{-x}} \\
+			\tanh x &= \frac{\sinh x}{\cosh x} = \frac{e^x + e^{-x}}{e^x - e^{-x}}
+		\end{align}
+
+		\subsection{Hyperbolic Function identities}
+		\begin{align}
+			\cosh^2x - \sinh^2x &= 1 \\
+			\sinh (x \pm y) &= \sinh x \cosh y \pm \cosh x \sinh y \\
+			\cosh (x \pm y) &= \cosh x \cosh y \pm \sinh x \sinh y \\
+			\sinh 2x &= 2\sinh x \cosh x \\
+			\cosh 2x &= \cosh^2x + \sinh^2x \\
+					 &= 2\cosh^2x - 1 \\
+					 &= 2\sinh^2x + 1 \\
+			\cosh \frac{x}{2} &= \sqrt{\frac{\cosh u + 1}{2}} \\
+			\sinh \frac{x}{2} &= \pm \sqrt{\frac{\cosh u - 1}{2}} 
+		\end{align}
+
+		\subsection{Differentiation of Hyperbolic functions}
+		\begin{align}
+			\odv{\sinh x}{x} &= \cosh x \\
+			\odv{\cosh x}{x} &= \sinh x \\
+			\odv{\tanh x}{x} &= \sech^2x \\
+			\odv{\cosech x}{x} &= -\cosech x \coth x \\
+			\odv{\sech x}{x} &= -\sech x \tanh x \\
+			\odv{\coth x}{x} &= -\cosech^2x
+		\end{align}
+	\end{minipage}%
+	\hfill
+	\begin{minipage}[t]{\pwidth}
+
+		\subsection{Integration of Hyperbolic Functions}
+		\begin{align}
+			 \int \cosh x \ dx &= \sinh x + c \\
+			 \int \sinh x \ dx &= \cosh x + c \\
+			 \int \sech^2x \ dx &= \tanh x + c \\
+			 \int \cosech x \coth x \ dx &= -\cosech x + c \\
+			 \int \sech x \tanh x \ dx &= -\sech x + c \\
+			 \int \cosech^2x \ dx &= -\coth x + c
+		\end{align}
+
+		\subsection{Inverse Hyperbolic Function definitions}
+		\begin{align}
+			\arsinh x &= \ln(x + \sqrt{x^2 + 1}) \\
+			\arcosh x &= \ln(x + \sqrt{x^2 - 1}) \\
+			\artanh x &= \frac{1}{2} \ln\left(\frac{1+x}{1-x}\right), |x|<1 \\
+			\arcosech x &= \ln\left(\frac 1x + \frac{\sqrt{x^2 + 1}}{|x|}\right) = \arsinh \frac 1x \\
+			\arsech x &= \ln\left(\frac{1 + \sqrt{1-x^2}}{x}\right) = \arcosh \frac 1x \\
+			\arcoth x &= \frac{1}{2} \ln\left(\frac{x+1}{x-1}\right), |x|>1 = \artanh \frac 1x
+		\end{align}
+		{ \small * Note that $\arsinh$ is the formal notation for the inverse 
+		hyperbolic functions. This is not a typo; 'ar' stands for 'area' in this
+		case and not for 'arc'. However, the notations $\mathrm{arcsinh}$ and 
+		$\sinh^{-1}$ are also used}
+
+		\subsection{Differentiation of Inverse Hyperbolic Functions}
+		TODO
+	\end{minipage}
+\end{document}
