@@ -1,0 +1,365 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Fundamentals &mdash; MathNotes  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Mathematical Basics" href="maths.html" />
+    <link rel="prev" title="Quantum Chemistry" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> MathNotes
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Maths</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../maths/trigonometry/index.html">Trigonometry</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Physics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../physics/mechanics/index.html">Mechanics</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Chemistry</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Quantum Chemistry</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Fundamentals</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#why-quantum-chemistry">Why Quantum Chemistry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-go-quantum">How to go Quantum</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#deriving-probability-from-the-wavefunction">Deriving Probability from the wavefunction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#observables-operators-and-their-notations">Observables, Operators and their Notations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#properties-of-operators">Properties of Operators</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#eigenvalues-and-eigenfunctions">Eigenvalues and Eigenfunctions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hermiticity">Hermiticity</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="maths.html">Mathematical Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inf_sq_well.html">Infinite Square Well</a></li>
+<li class="toctree-l2"><a class="reference internal" href="h_atom.html">Hydrogen Atom</a></li>
+<li class="toctree-l2"><a class="reference internal" href="me_atom.html">Multi-Electron Atom</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bonding.html">Bonding</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">MathNotes</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">Quantum Chemistry</a> &raquo;</li>
+        
+      <li>Fundamentals</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/chemistry/quantum/fundamentals.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="fundamentals">
+<h1>Fundamentals<a class="headerlink" href="#fundamentals" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="why-quantum-chemistry">
+<h2>Why Quantum Chemistry<a class="headerlink" href="#why-quantum-chemistry" title="Permalink to this headline">¶</a></h2>
+<p>This is a good question, which doesn’t get enough attention. For most of us,
+we have to learn quantum mechanics because it’s in the course curriculum, or
+because “classical mechanics fails at the microscopic level” or some BS like that.
+<a class="reference external" href="https://www.feynmanlectures.caltech.edu/III_01.html">Chapter 1 of the Feynman Lectures, Vol.3</a>
+explains this amazingly, and if you’re still not satisfied and want a more
+hardcore explanation, check out the afterword of <a class="reference external" href="https://www.fisica.net/mecanica-quantica/Griffiths%20-%20Introduction%20to%20quantum%20mechanics.pdf">Griffiths’ Introduction to
+Quantum Mechanics</a>.</p>
+<p>In short, Quantum mechanics primarily arises to explain the behaviour of things
+that cannot be measured without disturbing their state. Like the electron or
+photon in a double slit experiment, trying to measure their position would
+cause a transfer of energy, however infinitesimal. This would disturb them from
+the state that they were in, which would defeat the purpose of the measurement.</p>
+</div>
+<div class="section" id="how-to-go-quantum">
+<h2>How to go Quantum<a class="headerlink" href="#how-to-go-quantum" title="Permalink to this headline">¶</a></h2>
+<p>Explaining the behaviour of things that cannot be measured sounds easier than
+it looks. If we have a box and a ball, and we need to describe the position of
+the ball with reference to the box, for simplicity’s sake we have two options:</p>
+<ol class="arabic simple">
+<li><p>The ball is in the box</p></li>
+<li><p>The ball is outside the box i.e. it is not in the box</p></li>
+</ol>
+<p>Since this is quantum chemistry, we cannot measure the location of the ball.
+We then use probabilities to describe the location of the ball: if <span class="math notranslate nohighlight">\(p_1^2\)</span> is the
+probability of the ball being in the box and <span class="math notranslate nohighlight">\(p_2^2\)</span> is the probability of the
+ball being outside the box, then the position of the ball is defined by something
+we call a <cite>wavefunction</cite>. The wavefunction in this case would be</p>
+<div class="math notranslate nohighlight">
+\[\psi = p_1\ket{1} + p_2\ket{2}\]</div>
+<p>Here we have described the simplest quantum system: A <a class="reference external" href="https://en.wikipedia.org/wiki/Two-state_quantum_system">2 state quantum system</a>.
+Don’t be surprised by the <span class="math notranslate nohighlight">\(\ket{1}\)</span> and <span class="math notranslate nohighlight">\(\ket{2}\)</span> notations: they
+merely represent the different states the system can take, and we’ll go into
+more detail on them in a second. If they make you
+uncomfortable (they made me :P), you can think of them as the unit vectors
+<span class="math notranslate nohighlight">\(\hat i\)</span> and <span class="math notranslate nohighlight">\(\hat j\)</span>. The wavefunction would then define a vector
+which was inclined at <span class="math notranslate nohighlight">\(\arctan \frac{p_2}{p_1}\)</span> to the x-axis.</p>
+</div>
+<div class="section" id="deriving-probability-from-the-wavefunction">
+<h2>Deriving Probability from the wavefunction<a class="headerlink" href="#deriving-probability-from-the-wavefunction" title="Permalink to this headline">¶</a></h2>
+<p>You must have noticed that rather than putting the probability directly
+in the wavefunction, we took the square root of probability. This is called
+the <a class="reference external" href="https://en.wikipedia.org/wiki/Probability_amplitude">Probability Amplitude</a>,
+and is by definition. According to the born interpretation of the wavefunction
+<span class="math notranslate nohighlight">\(|\psi|^2\)</span> gives the probability of an event occuring. In this case,
+the probability of state 1 is <span class="math notranslate nohighlight">\(p_1^2\)</span> and that of state 2 is <cite>p_2^2</cite>. A few
+things to note:</p>
+<ol class="arabic simple">
+<li><p>The probability amplitude can also be complex. In this case, the probability
+is the absolute value of the wavefunction, given by <span class="math notranslate nohighlight">\(\psi^*\psi\)</span>, <span class="math notranslate nohighlight">\(\psi*\)</span>
+is the complex conjugate of <span class="math notranslate nohighlight">\(\psi\)</span>.</p></li>
+<li><p>The total probability of the wavefunction should be 1. In this case, that implies
+<span class="math notranslate nohighlight">\(p_1^2 + p_2^2 = 1\)</span>. In general, for a given wavefunction psi, it’s
+square integral <span class="math notranslate nohighlight">\(\int \psi^* \psi d\tau\)</span> should be 1 over it’s entire
+domain.</p></li>
+</ol>
+</div>
+<div class="section" id="observables-operators-and-their-notations">
+<h2>Observables, Operators and their Notations<a class="headerlink" href="#observables-operators-and-their-notations" title="Permalink to this headline">¶</a></h2>
+<p>In quantum mechanics, an Observable is a dynamic variable of a system that can
+be experimentally measured, for example position, momentum and kinetic energy.
+An observable quantity is generally enclosed in a ‘ket’, which is the bracket-like
+thing we used to denote states of the ball earlier. However, I won’t be using
+kets and further formalism in these notes, except maybe in the Mathematics part.</p>
+<p>Every observable quantity has an operator associated with it. Thus, the position
+of a particle <span class="math notranslate nohighlight">\(\ket{x}\)</span> has an operator <span class="math notranslate nohighlight">\(\hat{x}\)</span> associated with
+it. The operator defines an operation to be performed on an observable.
+For example, the operator <span class="math notranslate nohighlight">\(\hat x\)</span> is defined as</p>
+<div class="math notranslate nohighlight">
+\[\hat x = x\]</div>
+<p>which is a simple multiplication operation. The momentum operator, however,
+is defined as follows:</p>
+<div class="math notranslate nohighlight">
+\[\hat p = -i \hbar \frac{\partial}{\partial x}\]</div>
+<p>Note that in multiple dimensions, <span class="math notranslate nohighlight">\(\frac{\partial}{\partial x}\)</span> becomes
+<span class="math notranslate nohighlight">\(\nabla\)</span>.</p>
+<p>One point of confusion is the notation <span class="math notranslate nohighlight">\(\hat p^2\)</span>: this does not mean
+that we are squaring the operator, but that we are applying the operator twice
+in succession. If we take an example,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+\hat p^2 U &amp;= \left(-i\hbar \frac{\partial }{\partial x}\right) \left( -i\hbar \frac{\partial U}{\partial x}\right) \\
+\hat p^2 U &amp;= -\hbar^2 \frac{\partial^2 U}{\partial x^2}
+\end{align}\end{split}\]</div>
+<p>An interesting thing to note is that using these two fundamental operators
+(momentum and position), we can define all of the operators related to classical
+mechanics as a function of <span class="math notranslate nohighlight">\(\hat p\)</span> and <span class="math notranslate nohighlight">\(\hat x\)</span>. As an example, kinetic
+energy is</p>
+<div class="math notranslate nohighlight">
+\[\hat K = \frac{\hat p^2}{2m} = \frac{-\hbar^2}{2m}\nabla^2\]</div>
+<p>Operators have a few important properties, which are discussed in the
+next section</p>
+</div>
+<div class="section" id="properties-of-operators">
+<h2>Properties of Operators<a class="headerlink" href="#properties-of-operators" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="eigenvalues-and-eigenfunctions">
+<h3>Eigenvalues and Eigenfunctions<a class="headerlink" href="#eigenvalues-and-eigenfunctions" title="Permalink to this headline">¶</a></h3>
+<p>If for an operator <span class="math notranslate nohighlight">\(\hat X\)</span>, the following equation holds:</p>
+<div class="math notranslate nohighlight">
+\[\hat X f = K f\]</div>
+<p>then <span class="math notranslate nohighlight">\(f\)</span> is called an <strong>eigenfunction</strong> of <span class="math notranslate nohighlight">\(\hat X\)</span> and <span class="math notranslate nohighlight">\(K\)</span> is
+called an <strong>eigenvalue</strong> of <span class="math notranslate nohighlight">\(\hat X\)</span>. The terminology derives from linear
+algebra (eigenvectors and eigenvalues), and we’ll explore the mathematics in the
+next section.</p>
+</div>
+<div class="section" id="hermiticity">
+<h3>Hermiticity<a class="headerlink" href="#hermiticity" title="Permalink to this headline">¶</a></h3>
+<p>All the quantum mechanical operators corresponding to observables are called
+<cite>hermitian</cite>: a hermitian operator <span class="math notranslate nohighlight">\(\hat X\)</span> is one for which the following
+is true:</p>
+<div class="math notranslate nohighlight">
+\[\int \psi_j^*\ \hat X\ \psi_i\ d\tau = \left\{ \int \psi_i^*\ \hat X\ \psi_j\ d\tau \right\}^*\]</div>
+<p>This will be covered in some more detail in the math section, but for now, there
+are two important properties of hermitian operators:</p>
+<ol class="arabic simple">
+<li><p>The eigenvalues of hermitian operators are real</p></li>
+<li><p>The eigenfunctions of hermitian operators are orthogonal</p></li>
+</ol>
+<p>The second point will be explained in greater detail in the Mathematics section.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="maths.html" class="btn btn-neutral float-right" title="Mathematical Basics" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Quantum Chemistry" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Aniruddha Deb
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
