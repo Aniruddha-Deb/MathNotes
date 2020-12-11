@@ -52,11 +52,11 @@ in the wavefunction, we took the square root of probability. This is called
 the `Probability Amplitude <https://en.wikipedia.org/wiki/Probability_amplitude>`_,
 and is by definition. According to the born interpretation of the wavefunction
 :math:`|\psi|^2` gives the probability of an event occuring. In this case, 
-the probability of state 1 is :math:`p_1^2` and that of state 2 is `p_2^2`. A few
+the probability of state 1 is :math:`p_1^2` and that of state 2 is :math:`p_2^2`. A few
 things to note:
 
 1. The probability amplitude can also be complex. In this case, the probability
-   is the absolute value of the wavefunction, given by :math:`\psi^*\psi`, :math:`\psi*`
+   is the absolute value of the wavefunction, given by :math:`\psi^*\psi`, :math:`\psi^*`
    is the complex conjugate of :math:`\psi`.
 2. The total probability of the wavefunction should be 1. In this case, that implies
    :math:`p_1^2 + p_2^2 = 1`. In general, for a given wavefunction psi, it's 
