@@ -95,7 +95,11 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Quantum Chemistry</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="fundamentals.html">Fundamentals</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Mathematical Basics</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Mathematical Basics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#hilbert-space">Hilbert Space</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dirac-bra-ket-notation">Dirac (Bra-Ket) Notation</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="inf_sq_well.html">Infinite Square Well</a></li>
 <li class="toctree-l2"><a class="reference internal" href="h_atom.html">Hydrogen Atom</a></li>
 <li class="toctree-l2"><a class="reference internal" href="me_atom.html">Multi-Electron Atom</a></li>
@@ -171,6 +175,107 @@
             
   <div class="section" id="mathematical-basics">
 <h1>Mathematical Basics<a class="headerlink" href="#mathematical-basics" title="Permalink to this headline">¶</a></h1>
+<div class="math notranslate nohighlight">
+\[\newcommand{\braket}[2]{\langle #1 | #2 \rangle}\]</div>
+<p>The following section assumes the reader knows about the following mathematical
+constructs:</p>
+<ol class="arabic simple">
+<li><p>Calculus, especially multivariable calculus</p></li>
+<li><p>Linear algebra: basics of vector spaces, eigenvectors and eigenvalues</p></li>
+<li><p>Real analysis: knowledge of sequences, subsequences and cauchy sequences</p></li>
+</ol>
+<div class="section" id="hilbert-space">
+<h2>Hilbert Space<a class="headerlink" href="#hilbert-space" title="Permalink to this headline">¶</a></h2>
+<p>Recapping from vector spaces, a vector space <span class="math notranslate nohighlight">\(X\)</span> is called:</p>
+<ol class="arabic simple">
+<li><p>A <em>normed linear space</em> if for every <span class="math notranslate nohighlight">\(f \in X\)</span> there is a real number
+<span class="math notranslate nohighlight">\(||f||\)</span>, called the <em>norm</em> of <span class="math notranslate nohighlight">\(f\)</span>, such that</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(||f|| \ge 0\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(||f|| = 0 \ \mathrm{iff} \ f = 0\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(||cf|| = |c|||f||\)</span> for every scalar c, and</p></li>
+<li><p><span class="math notranslate nohighlight">\(||f + g|| \le ||f|| + ||g||\)</span> (Triangle Inequality)</p></li>
+</ol>
+</li>
+<li><p>An <em>inner product space</em> if for every <span class="math notranslate nohighlight">\(f, g \in X\)</span> there exists a complex
+number <span class="math notranslate nohighlight">\(\langle f, g \rangle\)</span> called the <em>inner product</em> of f and g,
+such that</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(\langle f, f \rangle\)</span> is real and greater than zero,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\langle f, f \rangle = 0\)</span> if and only if <span class="math notranslate nohighlight">\(f = 0\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\langle g, f \rangle = \langle f, g \rangle^*\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\langle af_1 + bf_2, g\rangle = a\langle f_1,g \rangle + b\langle f_2, g \rangle\)</span></p></li>
+</ol>
+</li>
+</ol>
+<p>Note that every inner product space is a normed linear space, as each inner
+product determines a norm by the formula <span class="math notranslate nohighlight">\(||f|| = \langle f, f \rangle ^{1/2}\)</span>.</p>
+<p>As an example, consider the vector space <span class="math notranslate nohighlight">\(\Bbb{R}^2\)</span>. This vector space
+has two basis vectors, <span class="math notranslate nohighlight">\(\hat i\)</span> and <span class="math notranslate nohighlight">\(\hat j\)</span>. The norm of any vector
+<span class="math notranslate nohighlight">\(\pmb{r_1} = a\hat i + b\hat j\)</span> is defined as <span class="math notranslate nohighlight">\(\sqrt{a^2 + b^2}\)</span>, and the inner
+product with another vector <span class="math notranslate nohighlight">\(\pmb{r_2} = c\hat i + d\hat j\)</span> i.e.
+<span class="math notranslate nohighlight">\(\langle \pmb{r_1}, \pmb{r_2} \rangle\)</span> is defined as the dot product, which
+is <span class="math notranslate nohighlight">\(ac + bd\)</span>.</p>
+<p>Another important concept in vector spaces is that of <em>completeness</em>. If any
+convergent sequence is also a cauchy sequence in a vector space <span class="math notranslate nohighlight">\(X\)</span>, then
+<span class="math notranslate nohighlight">\(X\)</span> is said to be <em>complete</em></p>
+<p>We now come to the definition of Banach and Hilbert spaces: <strong>A complete normed
+linear space is called a Banach Space</strong>, and <strong>A Banach space whose norm is
+determined by an inner product is called a Hilber space</strong></p>
+<p>If the above definitions went over your head, don’t worry. All you need to know
+about hilbert spaces is that they are vector spaces equipped with an inner product,
+and they are also complete, which allows us to use calculus techniques on
+functions defined here. Hilbert spaces are key to quantum mechanics as they
+support an infinite number of basis vectors, and also allow the definition of
+functions on the space, thereby acting as function spaces as well.</p>
+<blockquote>
+<div><p>In quantum mechanics, all wavefunctions reside in the hilbert space</p>
+</div></blockquote>
+</div>
+<div class="section" id="dirac-bra-ket-notation">
+<h2>Dirac (Bra-Ket) Notation<a class="headerlink" href="#dirac-bra-ket-notation" title="Permalink to this headline">¶</a></h2>
+<p>Dirac notation is an effective way of representing states and operations in
+vector space. It consists of a <em>Bra</em> <span class="math notranslate nohighlight">\(\bra{a}\)</span>, which is a map from
+<span class="math notranslate nohighlight">\(V \to \Bbb{C}\)</span>, and a <em>Ket</em> <span class="math notranslate nohighlight">\(\ket{b}\)</span>, which, as discussed previously
+is just a vector. As a concrete example, consider</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\ket{b} = \left( \begin{array}{c} b_1 \\ b_2 \\ . \\ . \\ . \\ b_n \end{array} \right)\end{split}\]</div>
+<p>and consider</p>
+<div class="math notranslate nohighlight">
+\[\bra{a} = \left( \begin{array}{c c c c c c} a_1 &amp; a_2 &amp; . &amp; . &amp; . &amp; a_n \end{array} \right)\]</div>
+<p>Then in dirac notation, we can define <span class="math notranslate nohighlight">\(\braket{a}{b}\)</span> as</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+\braket{a}{b} &amp;= \left( \begin{array}{c c c c c c} a_1 &amp; a_2 &amp; . &amp; . &amp; . &amp; a_n \end{array} \right) \cdot \left( \begin{array}{c} b_1 \\ b_2 \\ . \\ . \\ . \\ b_n \end{array} \right) \\
+&amp;= a_1b_1 + a_2b_2 + ... + a_nb_n
+\end{align}\end{split}\]</div>
+<p>Note that every vector <span class="math notranslate nohighlight">\(\ket{b}\)</span> has a corresponding dual bra <span class="math notranslate nohighlight">\(\bra{b}\)</span>,
+which is defined as</p>
+<div class="math notranslate nohighlight">
+\[\bra{b} = \left( \begin{array}{c c c c c c} b_1^* &amp; b_2^* &amp; . &amp; . &amp; . &amp; b_n^* \end{array} \right)\]</div>
+<p>This is true, as by the definition of an inner product space <span class="math notranslate nohighlight">\(\braket{b}{b} = ||b||^2\)</span>, and
+<span class="math notranslate nohighlight">\(\braket{b}{b} = ||b_1||^2 + ||b_2||^2 + ... + ||b_n||^2 = ||b||^2\)</span>.</p>
+<p>This definition leads to some interesting formulae: for example,</p>
+<div class="math notranslate nohighlight">
+\[\braket{a}{b} = \braket{b}{a}^*\]</div>
+<p>and also allows the working of operators, which are more like transformations</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\hat{T}\ket{b} = \left( \begin{array}{c c c c c} t_{11} &amp; t_{12} &amp; . &amp; . &amp; t_{1n} \\ t_{21} &amp; t_{22} &amp; . &amp; . &amp; t_{2n} \\ .&amp;.&amp;.&amp; &amp;. \\ .&amp;.&amp; &amp;.&amp;. \\ t_{n1} &amp; t_{n2} &amp;.&amp;.&amp;t_{nn} \end{array} \right) \cdot
+\left( \begin{array}{c} b_1 \\ b_2 \\ . \\ . \\ b_n \end{array} \right)\end{split}\]</div>
+<p>The question that arises now is <strong>why don’t we just use linear algebra constructs
+in quantum mechanics instead of getting into Hilbert spaces?</strong> The answer to
+that question arises when we use infinite dimensional vectors in quantum mechanics
+(not something I’ll cover in these notes), as well as once we start using
+functions rather than fixed states to express position (this we will do). Once
+this happens, hilbert spaces become a more appropriate tool to use rather than
+matrices, which become clumsy. Since hilbert spaces also include vector spaces
+with a finite number of basis vectors, we can use both matrices and hilbert space
+constructs while dealing with problems of this sort. The two-state system
+discussed previously is mainly dealt with using matrices, as you would have found
+out if you would have visited the Wikipedia page.</p>
+<p>TODO some more stuff: eigenfunctions and eigenvalues revisited, expected values,
+inner product for functions, orthogonality and sandwitching operators.</p>
+</div>
 </div>
 
 
