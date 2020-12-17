@@ -21,6 +21,13 @@ it's just math.
 
    physics/mechanics/index
 
+.. toctree::
+	:maxdepth: 2
+	:hidden:
+	:caption: Chemistry
+
+	chemistry/quantum/index
+
 Indices and tables
 ==================
 

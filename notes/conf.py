@@ -28,8 +28,11 @@ author = 'Aniruddha Deb'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-	"sphinx_rtd_theme"
+	"sphinx_rtd_theme",
+	"sphinx.ext.mathjax"
 ]
+
+mathjax_path="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
