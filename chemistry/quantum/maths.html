@@ -98,6 +98,9 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Mathematical Basics</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#hilbert-space">Hilbert Space</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#dirac-bra-ket-notation">Dirac (Bra-Ket) Notation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#expected-values">Expected Values</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#calculus-recap">Calculus Recap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#linear-algebra-and-the-hilbert-space">Linear algebra and the Hilbert space</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="inf_sq_well.html">Infinite Square Well</a></li>
@@ -264,17 +267,90 @@ which is defined as</p>
 \left( \begin{array}{c} b_1 \\ b_2 \\ . \\ . \\ b_n \end{array} \right)\end{split}\]</div>
 <p>The question that arises now is <strong>why don’t we just use linear algebra constructs
 in quantum mechanics instead of getting into Hilbert spaces?</strong> The answer to
-that question arises when we use infinite dimensional vectors in quantum mechanics
-(not something I’ll cover in these notes), as well as once we start using
-functions rather than fixed states to express position (this we will do). Once
-this happens, hilbert spaces become a more appropriate tool to use rather than
-matrices, which become clumsy. Since hilbert spaces also include vector spaces
+that question arises when we use probability distribution functions to describe
+the state of the system rather than the system being in a finite number of
+discrete states. This is useful, as the inner product for such functions is defined
+in the hilbert space as follows:</p>
+<div class="math notranslate nohighlight">
+\[\braket{\psi}{\psi} = \int \psi^* \psi\ d\tau\]</div>
+<p>where <span class="math notranslate nohighlight">\(d\tau\)</span> is the appropriate volume element.</p>
+<p>Since hilbert spaces also include vector spaces
 with a finite number of basis vectors, we can use both matrices and hilbert space
 constructs while dealing with problems of this sort. The two-state system
 discussed previously is mainly dealt with using matrices, as you would have found
 out if you would have visited the Wikipedia page.</p>
-<p>TODO some more stuff: eigenfunctions and eigenvalues revisited, expected values,
-inner product for functions, orthogonality and sandwitching operators.</p>
+</div>
+<div class="section" id="expected-values">
+<h2>Expected Values<a class="headerlink" href="#expected-values" title="Permalink to this headline">¶</a></h2>
+<p>Deviating from hardcore quantum mechanics into statistics, the expected value
+of a variable <span class="math notranslate nohighlight">\(x\)</span> whose distribution is governed by a probability distribution
+function <span class="math notranslate nohighlight">\(P(x)\)</span> is defined by</p>
+<div class="math notranslate nohighlight">
+\[&lt;x&gt; = \sum_i x_i P(x_i)\]</div>
+<p>In general, the expected value of any function of <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(Q(x)\)</span> is defined as</p>
+<div class="math notranslate nohighlight">
+\[&lt;Q(x)&gt; = \sum_i Q(x_i) P(x_i)\]</div>
+<p>If the probability distribution function is continuous rather than discrete, then
+the expected value becomes</p>
+<div class="math notranslate nohighlight">
+\[&lt;Q(x)&gt; = \int_a^b Q(x) P(x)\ dx\]</div>
+<p>Back to quantum mechanics, by the born interpretation of the wavefunction, the
+probability distribution function is given by <span class="math notranslate nohighlight">\(|\psi|^2\)</span>. Thus, if we want to
+find the expected value of an observable, suppose the expected value of the
+x-position or the expected value of energy, then we ‘sandwich’ the operator
+between <span class="math notranslate nohighlight">\(\psi^*\)</span> and <span class="math notranslate nohighlight">\(\psi\)</span> and integrate over the domain. This ‘sandwich’ operation
+has a nice notation in bra-ket form, as shown below: if <span class="math notranslate nohighlight">\(X\)</span> is an observable
+whose operator is <span class="math notranslate nohighlight">\(\hat{X}\)</span>, then</p>
+<div class="math notranslate nohighlight">
+\[&lt;X&gt; = \braket{\psi|\hat{X}}{\psi} = \int \psi^* \hat{X} \psi\ d\tau\]</div>
+</div>
+<div class="section" id="calculus-recap">
+<h2>Calculus Recap<a class="headerlink" href="#calculus-recap" title="Permalink to this headline">¶</a></h2>
+<p>A quick refresher if your multivariable calculus is weak (like mine): <strong>the
+volume element varies on changing the coordinates</strong>. If we are integrating in
+spherical coordinates, then the volume element is <span class="math notranslate nohighlight">\(r^2 \sin \theta dr d\theta d\phi\)</span>, as
+shown by this diagram (credits: Daniel V Schroeder)</p>
+<img alt="../../_images/spherical.png" src="../../_images/spherical.png" />
+<p>Also, given a radial wavefunction <span class="math notranslate nohighlight">\(R(r)\)</span> which is spherically symmetric, such
+as a <span class="math notranslate nohighlight">\(\mathrm{1s}\)</span> orbital, the probability distribution function is <span class="math notranslate nohighlight">\(r^2 (R(r))^2\)</span>
+and NOT <span class="math notranslate nohighlight">\(4\pi r^2 (R(r))^2\)</span>. This is by definition; the <span class="math notranslate nohighlight">\(R(r)\)</span> wavefunction
+is normalized by setting <span class="math notranslate nohighlight">\(\int_0^{\infty} r^2(R(r))^2 dr\)</span> to <span class="math notranslate nohighlight">\(1\)</span> and finding the
+normalization constant. The <span class="math notranslate nohighlight">\(4\pi\)</span> factor comes in ONLY if you’re doing the
+integration on <span class="math notranslate nohighlight">\(\psi(x)\)</span> rather than <span class="math notranslate nohighlight">\(R(x)\)</span>, so be careful here.</p>
+<p>Another small tidbit is finding the most probable value of a variable: note that
+this is NOT equal to the expected value. The most probable value is found by
+finding the maxima of the probability distribution curve; basically taking it’s
+derivative and equating it to zero. This is also a source of confusion, as
+the most probable value of <span class="math notranslate nohighlight">\(r\)</span> for the <span class="math notranslate nohighlight">\(\mathrm{1s}\)</span> orbital is <span class="math notranslate nohighlight">\(a_0\)</span>, whereas
+the expected value is <span class="math notranslate nohighlight">\(1.5 a_0\)</span>.</p>
+</div>
+<div class="section" id="linear-algebra-and-the-hilbert-space">
+<h2>Linear algebra and the Hilbert space<a class="headerlink" href="#linear-algebra-and-the-hilbert-space" title="Permalink to this headline">¶</a></h2>
+<p>If you’ve been following me so far and are conversent with linear algebra, you
+must have figured out the etymology of eigenfunctions and eigenvalues; for the
+uniformed, if we have a square matrix <span class="math notranslate nohighlight">\(A\)</span> and a column vector <span class="math notranslate nohighlight">\(X\)</span>
+such that <span class="math notranslate nohighlight">\(AX = \lambda X\)</span>, where <span class="math notranslate nohighlight">\(\lambda\)</span> is a scalar, then
+<span class="math notranslate nohighlight">\(X\)</span> is called the eigenvalue of <span class="math notranslate nohighlight">\(A\)</span>, and <span class="math notranslate nohighlight">\(\lambda\)</span> is called the eigenvector
+of <span class="math notranslate nohighlight">\(A\)</span>. Due to the infiniteness of the hilbert space, the eigenvector is called
+the eigenfunction in hilbert space.</p>
+<p><strong>Orthogonality</strong> is another concept borrowed over from Linear Algebra: two
+matrices <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> are mutually orthogonal if <span class="math notranslate nohighlight">\(A^T B = 0\)</span>. In quantum
+mechanics, we say that two wavefunctions <span class="math notranslate nohighlight">\(\psi_i\)</span> and <span class="math notranslate nohighlight">\(\psi_j\)</span> are orthogonal
+if</p>
+<div class="math notranslate nohighlight">
+\[\braket{\psi_i}{\psi_j} = \int \psi_i^* \psi_j\ d\tau = 0\]</div>
+<p>Another concept borrowed from Linear algebra is <strong>Hermiticity</strong>: for any arbitrary
+complex valued vector <span class="math notranslate nohighlight">\(v\)</span> and a hermitian matrix <span class="math notranslate nohighlight">\(A\)</span>, we have <span class="math notranslate nohighlight">\(v^H A v = (v^H A v)^H\)</span>,
+that is the given product is real. This also extends to quantum mechanics, as
+discussed in the previous section. Also, by the <a class="reference external" href="https://en.wikipedia.org/wiki/Spectral_theorem">spectral theorem</a>,
+hermitian matrices have real eigenvalues and orthogonal eigenvectors. These
+properties also extend over to quantum mechanics.</p>
+<p>This much math provides a firm foundation for what is to follow. Other math
+concepts will be explained as and when they are required, or will be covered
+in an appendix/addendum. Note that we don’t need much rigorousness in the math
+we will use: <em>math is to be used as a tool to solve quantum mechanical problems,
+and we should not get convoluted in the folds of mathematical rigour when using
+it as a tool</em>.</p>
 </div>
 </div>
 

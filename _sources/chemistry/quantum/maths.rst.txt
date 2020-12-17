@@ -102,15 +102,101 @@ and also allows the working of operators, which are more like transformations
 
 The question that arises now is **why don't we just use linear algebra constructs
 in quantum mechanics instead of getting into Hilbert spaces?** The answer to 
-that question arises when we use infinite dimensional vectors in quantum mechanics
-(not something I'll cover in these notes), as well as once we start using 
-functions rather than fixed states to express position (this we will do). Once 
-this happens, hilbert spaces become a more appropriate tool to use rather than
-matrices, which become clumsy. Since hilbert spaces also include vector spaces
+that question arises when we use probability distribution functions to describe 
+the state of the system rather than the system being in a finite number of 
+discrete states. This is useful, as the inner product for such functions is defined
+in the hilbert space as follows:
+
+.. math:: \braket{\psi}{\psi} = \int \psi^* \psi\ d\tau
+
+where :math:`d\tau` is the appropriate volume element.
+
+Since hilbert spaces also include vector spaces
 with a finite number of basis vectors, we can use both matrices and hilbert space
 constructs while dealing with problems of this sort. The two-state system 
 discussed previously is mainly dealt with using matrices, as you would have found
 out if you would have visited the Wikipedia page.
 
-TODO some more stuff: eigenfunctions and eigenvalues revisited, expected values,
-inner product for functions, orthogonality and sandwitching operators.
+Expected Values
+##################################################
+
+Deviating from hardcore quantum mechanics into statistics, the expected value
+of a variable :math:`x` whose distribution is governed by a probability distribution
+function :math:`P(x)` is defined by
+
+.. math:: <x> = \sum_i x_i P(x_i)
+
+In general, the expected value of any function of :math:`x`, :math:`Q(x)` is defined as
+
+.. math:: <Q(x)> = \sum_i Q(x_i) P(x_i)
+
+If the probability distribution function is continuous rather than discrete, then
+the expected value becomes
+
+.. math:: <Q(x)> = \int_a^b Q(x) P(x)\ dx
+
+Back to quantum mechanics, by the born interpretation of the wavefunction, the 
+probability distribution function is given by :math:`|\psi|^2`. Thus, if we want to 
+find the expected value of an observable, suppose the expected value of the 
+x-position or the expected value of energy, then we 'sandwich' the operator 
+between :math:`\psi^*` and :math:`\psi` and integrate over the domain. This 'sandwich' operation
+has a nice notation in bra-ket form, as shown below: if :math:`X` is an observable 
+whose operator is :math:`\hat{X}`, then
+
+.. math:: <X> = \braket{\psi|\hat{X}}{\psi} = \int \psi^* \hat{X} \psi\ d\tau
+
+Calculus Recap
+##################################################
+
+A quick refresher if your multivariable calculus is weak (like mine): **the 
+volume element varies on changing the coordinates**. If we are integrating in 
+spherical coordinates, then the volume element is :math:`r^2 \sin \theta dr d\theta d\phi`, as 
+shown by this diagram (credits: Daniel V Schroeder)
+
+.. image:: res/spherical.png
+
+Also, given a radial wavefunction :math:`R(r)` which is spherically symmetric, such 
+as a :math:`\mathrm{1s}` orbital, the probability distribution function is :math:`r^2 (R(r))^2`
+and NOT :math:`4\pi r^2 (R(r))^2`. This is by definition; the :math:`R(r)` wavefunction
+is normalized by setting :math:`\int_0^{\infty} r^2(R(r))^2 dr` to :math:`1` and finding the
+normalization constant. The :math:`4\pi` factor comes in ONLY if you're doing the 
+integration on :math:`\psi(x)` rather than :math:`R(x)`, so be careful here.
+
+Another small tidbit is finding the most probable value of a variable: note that 
+this is NOT equal to the expected value. The most probable value is found by
+finding the maxima of the probability distribution curve; basically taking it's 
+derivative and equating it to zero. This is also a source of confusion, as 
+the most probable value of :math:`r` for the :math:`\mathrm{1s}` orbital is :math:`a_0`, whereas
+the expected value is :math:`1.5 a_0`.
+
+Linear algebra and the Hilbert space
+##################################################
+
+If you've been following me so far and are conversent with linear algebra, you 
+must have figured out the etymology of eigenfunctions and eigenvalues; for the 
+uniformed, if we have a square matrix :math:`A` and a column vector :math:`X` 
+such that :math:`AX = \lambda X`, where :math:`\lambda` is a scalar, then 
+:math:`X` is called the eigenvalue of :math:`A`, and :math:`\lambda` is called the eigenvector
+of :math:`A`. Due to the infiniteness of the hilbert space, the eigenvector is called
+the eigenfunction in hilbert space.
+
+**Orthogonality** is another concept borrowed over from Linear Algebra: two
+matrices :math:`A` and :math:`B` are mutually orthogonal if :math:`A^T B = 0`. In quantum 
+mechanics, we say that two wavefunctions :math:`\psi_i` and :math:`\psi_j` are orthogonal
+if
+
+.. math:: \braket{\psi_i}{\psi_j} = \int \psi_i^* \psi_j\ d\tau = 0
+
+Another concept borrowed from Linear algebra is **Hermiticity**: for any arbitrary
+complex valued vector :math:`v` and a hermitian matrix :math:`A`, we have :math:`v^H A v = (v^H A v)^H`, 
+that is the given product is real. This also extends to quantum mechanics, as 
+discussed in the previous section. Also, by the `spectral theorem <https://en.wikipedia.org/wiki/Spectral_theorem>`_, 
+hermitian matrices have real eigenvalues and orthogonal eigenvectors. These 
+properties also extend over to quantum mechanics.
+
+This much math provides a firm foundation for what is to follow. Other math 
+concepts will be explained as and when they are required, or will be covered 
+in an appendix/addendum. Note that we don't need much rigorousness in the math 
+we will use: *math is to be used as a tool to solve quantum mechanical problems, 
+and we should not get convoluted in the folds of mathematical rigour when using 
+it as a tool*.
