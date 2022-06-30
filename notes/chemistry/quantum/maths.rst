@@ -174,9 +174,9 @@ Linear algebra and the Hilbert space
 
 If you've been following me so far and are conversent with linear algebra, you 
 must have figured out the etymology of eigenfunctions and eigenvalues; for the 
-uniformed, if we have a square matrix :math:`A` and a column vector :math:`X` 
+uninformed, if we have a square matrix :math:`A` and a column vector :math:`X` 
 such that :math:`AX = \lambda X`, where :math:`\lambda` is a scalar, then 
-:math:`X` is called the eigenvalue of :math:`A`, and :math:`\lambda` is called the eigenvector
+:math:`X` is called the eigenvector of :math:`A`, and :math:`\lambda` is called the eigenvalue
 of :math:`A`. Due to the infiniteness of the hilbert space, the eigenvector is called
 the eigenfunction in hilbert space.
 

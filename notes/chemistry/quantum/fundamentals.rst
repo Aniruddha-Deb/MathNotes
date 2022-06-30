@@ -66,7 +66,7 @@ things to note:
 Observables, Operators and their Notations
 ###################################################
 
-In quantum mechanics, an Observable is a dynamic variable of a system that can 
+In quantum mechanics, an **Observable** is a dynamic variable of a system that can 
 be experimentally measured, for example position, momentum and kinetic energy.
 An observable quantity is generally enclosed in a 'ket', which is the bracket-like
 thing we used to denote states of the ball earlier. However, I won't be using 
@@ -74,11 +74,14 @@ kets and further formalism in these notes, except maybe in the Mathematics part.
 
 Every observable quantity has an operator associated with it. Thus, the position
 of a particle :math:`\ket{x}` has an operator :math:`\hat{x}` associated with
-it. The operator defines an operation to be performed on an observable. 
+it. **The operator defines an operation to be performed on an observable.**
 For example, the operator :math:`\hat x` is defined as
 
 .. math:: \hat x = x
 
+Note that the operators work on a state vector like :math:`\ket{x}`, rather
+than a function. Quantum operators are quite different from the algebraic operators
+we would find.
 which is a simple multiplication operation. The momentum operator, however,
 is defined as follows:
 
